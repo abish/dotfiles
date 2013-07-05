@@ -1,0 +1,6 @@
+#!/Users/tatsuya.shibahara/perl5/perlbrew/perls/perl-5.16.3/bin/perl
+use strict;
+use warnings;
+use Test::More;
+
+done_testing;
