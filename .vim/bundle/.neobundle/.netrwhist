@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/game/github/workshop/t/app/rakumeshi'
 let g:netrw_dirhist_2='/home/game/.rbenv/versions/1.9.3-p392c/lib/ruby/1.9.1/rubygems'
 let g:netrw_dirhist_3='/home/game/github/workshop/util/mysql/ddl'
 let g:netrw_dirhist_4='/home/game/github/workshop/app/rakumeshi'
 let g:netrw_dirhist_5='/home/game/github/workshop/app/rakumeshi/lib/Rakumeshi/Smart'
 let g:netrw_dirhist_6='/home/game/github/workshop/app/rakumeshi/lib/Rakumeshi/Smart/C/Account'
+let g:netrw_dirhist_7='/Users/tatsuya_shibahara/dotfiles/git-completion'

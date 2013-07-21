@@ -41,12 +41,12 @@ set cursorline
 highlight CursorLine ctermbg=black guibg=black
 
 "cursor move
-imap {} {}<Left>
-imap [] []<Left>
-imap () ()<Left>
-imap "" ""<Left>
-imap '' ''<Left>
-imap <> <><Left>
+"imap {} {}<Left>
+"imap [] []<Left>
+"imap () ()<Left>
+"imap "" ""<Left>
+"imap '' ''<Left>
+"imap <> <><Left>
 
 "insert mode でjjでesc
 inoremap jj <Esc>
