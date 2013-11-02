@@ -13,6 +13,12 @@ ssh-add > /dev/null 2>&1
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-          . /etc/bashrc
-        fi
-source ~/perl5/perlbrew/etc/bashrc
+  . /etc/bashrc
+fi
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
+  source ~/perl5/perlbrew/etc/bashrc
+fi
+source ~/dotfiles/.git-completion.sh
+source ~/dotfiles/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=
+export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
