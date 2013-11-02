@@ -23,7 +23,6 @@ set listchars=tab:>\
 map tv <Esc>:'<,'>! perltidy<CR>
 "auto space insert
 "inoremap <expr> = smartchr#one_of(' = ', ' == ', ' === ', '=')
-inoremap <buffer><expr> , smartchr#one_of(', ', ',')
 
 "end search highlight
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
