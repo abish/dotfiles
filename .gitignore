@@ -2,3 +2,4 @@
 !.vim/bundle/neobundle.vim
 .vim/template/*
 .vim/bundle/.neobundle/.netrwhist
+*.DS_Store
