@@ -1,3 +1,37 @@
+"--------------------------------------------------------------------------
+" neobundle
+set nocompatible               " Be iMproved
+filetype off                   " Required!
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+filetype plugin indent on     " Required!
+
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
+
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neosnippet.git'
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'sudo.vim'
+NeoBundle 'kana/vim-smartchr'
+NeoBundle 'YankRing.vim'
+NeoBundle 'mbbill/undotree'
+
+
+
 set number
 syntax on
 set expandtab
@@ -25,8 +59,8 @@ map tv <Esc>:'<,'>! perltidy<CR>
 "inoremap <expr> = smartchr#one_of(' = ', ' == ', ' === ', '=')
 
 "end search highlight
-nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
-nnoremap <Esc><Esc><Esc> :<C-u>set hlsearch<Return>
+nnoremap <Esc><Esc> :set nohlsearch<CR>
+nnoremap <Esc><Esc><Esc> :set hlsearch<CR>
 
 set cursorline
 "augroup cch
@@ -87,28 +121,7 @@ au! BufWritePost *.pm call s:check_package_name()
  "template
  autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl-script.txt
  autocmd BufNewFile *.t 0r $HOME/.vim/template/perl-test.txt
-
-"--------------------------------------------------------------------------
-" neobundle
-set nocompatible               " Be iMproved
-filetype off                   " Required!
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#rc(expand('~/.vim/bundle/'))
-
-filetype plugin indent on     " Required!
-
-" Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
-endif
-
+ autocmd FileType * setlocal formatoptions-=ro
 
 "--------------------------------------------------------------------------
 "" neocomplcache
@@ -210,18 +223,5 @@ map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
-
-
-NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'Shougo/neosnippet.git'
-NeoBundle 'petdance/vim-perl'
-NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'sudo.vim'
-NeoBundle 'kana/vim-smartchr'
-NeoBundle 'YankRing.vim'
 nmap , y :YRShow<CR>
-"set clipboard+=unnamedplus,unnamed
-NeoBundle 'mbbill/undotree'
 nmap U :UndotreeToggle<CR>
