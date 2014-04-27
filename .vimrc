@@ -29,6 +29,7 @@ NeoBundle 'sudo.vim'
 NeoBundle 'kana/vim-smartchr'
 NeoBundle 'YankRing.vim'
 NeoBundle 'mbbill/undotree'
+NeoBundle 'stephpy/vim-yaml'
 
 
 
