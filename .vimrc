@@ -30,7 +30,8 @@ NeoBundle 'kana/vim-smartchr'
 NeoBundle 'YankRing.vim'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'stephpy/vim-yaml'
-
+NeoBundle 'Shougo/unite.vim'
+NeoBundleCheck
 
 
 set number
@@ -226,3 +227,9 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 nmap , y :YRShow<CR>
 nmap U :UndotreeToggle<CR>
+
+"----------------------------------------------------------
+" Unite
+"----------------------------------------------------------
+let g:unite_enable_start_insert=1
+nmap <silent> <C-l>      :<C-u>Unite -start-insert file_rec<CR>
