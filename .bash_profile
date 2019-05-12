@@ -7,5 +7,6 @@ fi
 
 # User specific environment and startup programs
 export LSCOLORS=gxfxcxdxbxegedabagacad
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/bin:/usr/local/bin:/Users/tatsuya_shibahara/Library/Android/sdk/platform-tools
 
+eval "$(nodenv init -)"

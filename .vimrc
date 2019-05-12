@@ -30,15 +30,15 @@ NeoBundle 'kana/vim-smartchr'
 NeoBundle 'YankRing.vim'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'stephpy/vim-yaml'
-
+NeoBundle 'leafgarland/typescript-vim'
 
 
 set number
 syntax on
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,cp932
 set fileformats=unix,mac,dos
@@ -64,11 +64,6 @@ nnoremap <Esc><Esc> :set nohlsearch<CR>
 nnoremap <Esc><Esc><Esc> :set hlsearch<CR>
 
 set cursorline
-"augroup cch
-"	autocmd! cch
-"	autocmd WinLeave * set nocursorline
-"	autocmd WinEnter,BufRead * set cursorline
-"augroup END
 
 ":hi clear CursorLine
 :hi CursorLine gui=underline
@@ -114,15 +109,17 @@ au! BufWritePost *.pm call s:check_package_name()
 
 "--------------------------------------------------------------------------
 "Enable omni completion. Not required if they are already set elsewhere in .vimrc
- autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
- autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
- autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
- autocmd BufNewFile,BufRead *.t      set filetype=perl
- autocmd BufNewFile,BufRead *.tt      set filetype=html
- "template
- autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl-script.txt
- autocmd BufNewFile *.t 0r $HOME/.vim/template/perl-test.txt
- autocmd FileType * setlocal formatoptions-=ro
+augroup vimrc
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd BufRead,BufNewFile *.ts set filetype=typescript
+    autocmd BufNewFile,BufRead *.t      set filetype=perl
+    autocmd BufNewFile,BufRead *.tt      set filetype=html
+    "template
+    autocmd FileType * setlocal formatoptions-=ro
+augroup END
 
 "--------------------------------------------------------------------------
 "" neocomplcache
